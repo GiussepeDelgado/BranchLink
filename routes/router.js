@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { crearProyecto, obtenerProyectos, actualizarProyecto, eliminarProyecto } = require('../controllers/Proyectos');
 const { obtenerEquiposProyecto,crearEquipoProyecto,actualizarEquipo,eliminarEquipo } = require('../controllers/Equipos');
-const { agregarUsuario, obtenerUsuarios } = require('../controllers/Usuarios');
+const { agregarUsuario, obtenerUsuarios, login } = require('../controllers/Usuarios');
 
 router.get('/', obtenerProyectos);
 // Rutas para operaciones CRUD en la colección "Proyectos"
@@ -22,4 +22,5 @@ router.delete('/equipos/:id', eliminarEquipo); // Eliminar un equipo por ID
 
 router.post('/usuarios', agregarUsuario); // Crear un nuevo proyecto
 router.get('/usuarios', obtenerUsuarios); // Obtener todos los proyectos
+router.get('/login', login); // Obtener todos los proyectos
 module.exports = router;
